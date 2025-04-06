@@ -1,0 +1,11 @@
+.scrollList {
+  flex-grow: 1;
+  width: 145px;
+  overflow-y: auto;
+  max-height: calc(65.5vh - 220px);
+  list-style: none;
+  padding-right: 5px;
+  margin: 10px 10px 0;
+  padding-top: 6px;
+  background-color: rgba(238, 236, 232, 0.25);
+}
