@@ -1,34 +1,36 @@
 import { useSelector } from 'react-redux';
 import Contact from '../Contact/Contact';
-import { selectContacts } from '../../redux/contactsSlice';
-import { selectNameFilter } from '../../redux/filtersSlice';
 import css from './ContactList.module.css';
+import {
+  selectFilteredContacts,
+  selectIsLoading,
+} from '../../redux/contactsSlice';
 
 const ContactList = () => {
-  const contacts = useSelector(selectContacts);
-  const filter = useSelector(selectNameFilter);
-
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredContacts = useSelector(selectFilteredContacts);
+  const isLoading = useSelector(selectIsLoading);
 
   return (
     <ul className={css.scrollList}>
-      {filteredContacts.map(({ id, name, number }) => (
-        <li
-          key={id}
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
-          <Contact id={id} name={name} number={number} />
-        </li>
-      ))}
+      {filteredContacts.length === 0 && !isLoading ? (
+        <p className={css.message}>There are no contacts available</p>
+      ) : (
+        filteredContacts.map(({ id, name, number }) => (
+          <li
+            key={id}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+            }}
+          >
+            <Contact id={id} name={name} number={number} />
+          </li>
+        ))
+      )}
     </ul>
   );
 };

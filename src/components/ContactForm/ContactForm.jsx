@@ -1,8 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from '../../redux/contactsOps';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -15,8 +14,8 @@ const ContactForm = () => {
       .required('This field is required!'),
     number: Yup.string()
       .matches(
-        /(^\d{3}-\d{2}-\d{2}$)|(^\+\d{2}-\d{3}-\d{3}-\d{4}$)/,
-        'Only numbers in the format xxx-xx-xx and +xx-xxx-xxx-xxxx !'
+        /^\d{3}-\d{3}-\d{4}$/,
+        'Only numbers in the format xxx-xxx-xxxx !'
       )
       .min(3, 'Must be min 3 chars')
       .max(50, 'Maximum 50 characters!')
@@ -26,7 +25,6 @@ const ContactForm = () => {
   const handleSubmit = (values, actions) => {
     dispatch(
       addContact({
-        id: nanoid(),
         name: values.name,
         number: values.number,
       })
@@ -47,7 +45,7 @@ const ContactForm = () => {
           </label>
           <Field type="text" name="name" id="name"></Field>
           <ErrorMessage name="name" component="p" />
-          <label htmlFor="number">Number xxx-xx-xx</label>
+          <label htmlFor="number">Number xxx-xxx-xxxx</label>
           <Field type="text" name="number" id="number"></Field>
           <ErrorMessage name="number" component="p" />
 
