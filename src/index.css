@@ -39,12 +39,12 @@ body {
   height: 100%;
 }
 
-h1 {
+/* h1 {
   font-size: 21px;
   line-height: 1.1;
   letter-spacing: 0.25em;
   text-shadow: 1px 1px 1px rgb(0, 0, 0);
-}
+} */
 
 h1,
 h2,
@@ -85,24 +85,14 @@ button:focus-visible {
 }
 
 /* Загальні стилі для форми */
-form {
-  display: flex;
-  flex-direction: column;
-  width: 145px;
-  margin: 0 auto;
-  padding: 0 2px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  /* background-color: #f9f9f9; */
-}
 
 /* Стилі для кожного блоку з полем */
-form div {
+/* form div {
   margin-bottom: 12px;
-}
+} */
 
 /* Стилі для міток (label) */
-form label {
+/* form label {
   font-weight: bold;
   margin: 2px;
   display: inline-block;
@@ -110,16 +100,16 @@ form label {
   font-size: 12px;
   font-weight: 400;
   line-height: 1.1;
-}
+} */
 
 /* Стилі для полів вводу */
-form > input {
+/* form > input {
   width: 100%;
   padding: 1px 2px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
-}
+} */
 
 /* Стилі для повідомлень про помилки */
 form span {
@@ -129,43 +119,19 @@ form span {
   display: block;
 }
 
-/* Стилі для кнопки відправки */
-form button {
-  margin: 8px auto;
-  padding: 4px 6px;
-  border: none;
-  background-color: #4caf50;
-  color: white;
-  font-size: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-form button:hover {
-  background-color: #45a049;
-}
-
-p {
+/* p {
   margin: 2px auto;
   font-size: 12px;
   font-weight: bold;
   color: #333;
-}
+} */
 
-input {
+/* input {
   padding: 1px;
   font-size: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-input:focus {
-  border-color: #4a90e2;
-  outline: none;
-}
+} */
 
 a {
   margin-top: 5px;
@@ -200,7 +166,7 @@ li > div > div {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    /* color: #213547; */
     background-color: #ffffff;
   }
   a:hover {

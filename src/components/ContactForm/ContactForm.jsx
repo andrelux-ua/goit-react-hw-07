@@ -2,6 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contactsOps';
+import css from './ContactForm.module.css';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
@@ -33,20 +34,32 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
+    <div className={css.forma}>
       <Formik
         initialValues={{ name: '', number: '' }}
         onSubmit={handleSubmit}
         validationSchema={phonebookSchema}
       >
-        <Form style={{ padding: '1px' }}>
-          <label htmlFor="name" style={{}}>
+        <Form className={css.form}>
+          <label htmlFor="name" className={css.label}>
             Name
           </label>
-          <Field type="text" name="name" id="name"></Field>
+          <Field
+            className={css.input}
+            type="text"
+            name="name"
+            id="name"
+          ></Field>
           <ErrorMessage name="name" component="p" />
-          <label htmlFor="number">Number xxx-xxx-xxxx</label>
-          <Field type="text" name="number" id="number"></Field>
+          <label htmlFor="number" className={css.label}>
+            Number xxx-xxx-xxxx
+          </label>
+          <Field
+            className={css.input}
+            type="text"
+            name="number"
+            id="number"
+          ></Field>
           <ErrorMessage name="number" component="p" />
 
           <button type="submit">Add contact</button>

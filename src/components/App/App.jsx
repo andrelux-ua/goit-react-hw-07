@@ -20,20 +20,15 @@ const App = () => {
   return (
     <Layout>
       <div className={css.fixedHeader}>
-        <h1
-          style={{ marginTop: '2px', marginBottom: '5px', textAlign: 'center' }}
-        >
-          Phonebook
-        </h1>
+        <h1 className={css.titleLayout}>Phonebook</h1>
         <ContactForm />
         <SearchBox />
         {isLoading && !isError && <Loader />}
         {isError && (
-          <p className={css.error}>
-            Unfortunately, there was a problem with the connection.
-            <span className={css.errorMessage}>
-              We can't connect. Please ensure your internet is working
-            </span>
+          <p className={css.errorMessage}>
+            Unfortunately, there was an issue, and we couldn't establish a
+            connection. Please check your internet connection and try connecting
+            again
           </p>
         )}
         <ContactList />

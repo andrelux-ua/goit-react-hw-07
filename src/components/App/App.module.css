@@ -8,31 +8,35 @@
 .fixedHeader {
   position: sticky;
   top: 0;
-  background-color: white;
   z-index: 10;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  margin: 0 auto;
+  /* font-weight: bold; */
+  color: #ffffff;
+  text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  width: 100%;
+  max-width: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.titleLayout {
+  margin-bottom: 5px;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+.errorMessage {
+  text-align: center;
+  color: rgb(255, 174, 0);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  margin: 2px auto;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+} */
