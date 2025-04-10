@@ -32,3 +32,13 @@
   background-image: url(../../assets/images/f2.jpg);
   background-color: rgba(22, 128, 195, 0.95);
 }
+
+.images {
+  width: 680px;
+  height: 640px;
+  position: absolute;
+  -ms-content-zoom-limit-max: -1;
+  object-fit: cover;
+  filter: blur(100px);
+  opacity: 0.3;
+}
