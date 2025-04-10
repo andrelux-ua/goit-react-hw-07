@@ -17,17 +17,7 @@ const ContactList = () => {
           <p className={css.message}>There are no contacts available</p>
         ) : (
           filteredContacts.map(({ id, name, number }) => (
-            <li
-              key={id}
-              style={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: '100%',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-              }}
-            >
+            <li key={id}>
               <Contact id={id} name={name} number={number} />
             </li>
           ))

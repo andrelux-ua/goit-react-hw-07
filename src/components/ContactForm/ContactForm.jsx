@@ -50,7 +50,7 @@ const ContactForm = () => {
             name="name"
             id="name"
           ></Field>
-          <ErrorMessage name="name" component="p" />
+          <ErrorMessage name="name" component="p" className={css.error} />
           <label htmlFor="number" className={css.label}>
             Number xxx-xxx-xxxx
           </label>
@@ -60,7 +60,7 @@ const ContactForm = () => {
             name="number"
             id="number"
           ></Field>
-          <ErrorMessage name="number" component="p" />
+          <ErrorMessage name="number" component="p" className={css.error} />
 
           <button type="submit">Add contact</button>
         </Form>

@@ -57,3 +57,17 @@ form button {
 form button:hover {
   background-color: #45a049;
 }
+
+.form button:active {
+  background-color: white;
+  color: #4caf50;
+}
+
+.error {
+  color: rgb(255, 215, 21);
+  text-shadow: 5px 5px 12px rgba(0, 0, 0, 0.4);
+  padding: 2px 4px 1px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  font-weight: bold;
+}
